@@ -11,7 +11,7 @@ class customText extends StatelessWidget {
   const customText({
     Key? key,
     required this.label,
-    this.labelColor = appGreyColor,
+    this.labelColor = appBlackColor,
     this.fontSize = 16,
     this.onTap,
   }) : super(key: key);

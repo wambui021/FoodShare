@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:foodshare/configs/constants.dart';
 import 'package:foodshare/screens/about.dart';
 import 'package:foodshare/screens/home.dart';
 import 'package:foodshare/screens/profile.dart';
@@ -24,16 +25,16 @@ class _MainPageState extends State<Dashboard> {
     switch (page) {
       case 0:
         return _homePage;
-        break;
+        
       case 1:
         return _receiptPage;
-        break;
+        
       case 2:
         return _aboutPage;
-        break;
+        
       case 3:
         return _profilePage;
-        break;
+       
       default:
         return Container(
           child: Center(
@@ -54,14 +55,14 @@ class _MainPageState extends State<Dashboard> {
         index: _pageIndex,
         height: 60.0,
         items: <Widget>[
-          Icon(Icons.home, size: 30),
+          Icon(Icons.home, size: 30,),
           Icon(Icons.receipt, size: 30),
           Icon(Icons.info, size: 30),
           Icon(Icons.person, size: 30),
         ],
-        color: Colors.white,
-        buttonBackgroundColor: Colors.white,
-        backgroundColor: Colors.blueAccent,
+        color: primaryColor,
+        buttonBackgroundColor: primaryColor,
+        backgroundColor: appwhiteColor,
         animationCurve: Curves.easeInOut,
         animationDuration: Duration(milliseconds: 600),
         onTap: (int tappedIndex) {
