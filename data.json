@@ -1,0 +1,64 @@
+{
+    "sqlCommands": {
+      "useDatabase": "USE food_sharedb;",
+      "createTables": {
+        "users": [
+          "-- Create Users table",
+          "CREATE TABLE Users (",
+          "  User_ID INT AUTO_INCREMENT PRIMARY KEY,",
+          "  First_Name VARCHAR(355) NOT NULL,",
+          "  Last_Name VARCHAR(355) NOT NULL,",
+          "  Phone_Number VARCHAR(20) NOT NULL,",
+          "  Email_Address VARCHAR(355),",
+          "  Postal_Address VARCHAR(355),",
+          "  Password_Hash VARCHAR(355) NOT NULL,",
+          "  Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+          ");"
+        ],
+        "admin": [
+          "-- Create Admin table",
+          "CREATE TABLE Admin (",
+          "  Admin_ID INT AUTO_INCREMENT PRIMARY KEY,",
+          "  Admin_Name VARCHAR(255) NOT NULL,",
+          "  Email VARCHAR(255) UNIQUE NOT NULL,",
+          "  Contact VARCHAR(20),",
+          "  Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+          ");"
+        ],
+        "hotels": [
+          "-- Create Hotels table",
+          "CREATE TABLE Hotels (",
+          "  Hotel_ID INT AUTO_INCREMENT PRIMARY KEY,",
+          "  Manager_ID INT,",
+          "  Name VARCHAR(255) NOT NULL,",
+          "  Address VARCHAR(255) NOT NULL,",
+          "  City VARCHAR(255) NOT NULL,",
+          "  Phone VARCHAR(20),",
+          "  Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP,",
+          "  FOREIGN KEY (Manager_ID) REFERENCES Admin(Admin_ID)",
+          ");"
+        ],
+        "foods": [
+          "-- Create Foods table",
+          "CREATE TABLE Foods (",
+          "  Food_ID INT AUTO_INCREMENT PRIMARY KEY,",
+          "  Food_Type VARCHAR(255) NOT NULL",
+          ");"
+        ],
+        "orders": [
+          "-- Create Orders table",
+          "CREATE TABLE Orders (",
+          "  Order_ID INT AUTO_INCREMENT PRIMARY KEY,",
+          "  User_ID INT,",
+          "  Food_ID INT,",
+          "  Hotel_ID INT,",
+          "  Order_Time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,",
+          "  FOREIGN KEY (User_ID) REFERENCES Users(User_ID),",
+          "  FOREIGN KEY (Food_ID) REFERENCES Foods(Food_ID),",
+          "  FOREIGN KEY (Hotel_ID) REFERENCES Hotels(Hotel_ID)",
+          ");"
+        ]
+      }
+    }
+  }
+  

@@ -1,16 +1,17 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:foodshare/screens/dashboardNav.dart';
 
-import 'package:get/get.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
-  //Get.put(CurrentUserController());
+  // Initialize Firebase
+  await Firebase.initializeApp();
+
   runApp(GetMaterialApp(
-   
     home: Dashboard(),
     initialRoute: "/",
     debugShowCheckedModeBanner: false,
-    //getPages: Routes.routes,
   ));
 }

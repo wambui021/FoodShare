@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "313151583629",
+    "firebase_url": "https://food-share-39662-default-rtdb.firebaseio.com",
+    "project_id": "food-share-39662",
+    "storage_bucket": "food-share-39662.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313151583629:android:a8d25227a976b7734b39c4",
+        "android_client_info": {
+          "package_name": "com.example.foodshare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMN0WSwYYw3EumO7vrChKUjZnfblTY9eY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
